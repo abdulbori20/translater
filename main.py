@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import *
 import googletrans
 from deep_translator import GoogleTranslator
+import styles
 
 
 class MainWindow(QMainWindow):
@@ -27,19 +28,30 @@ class MainWindow(QMainWindow):
         vertical3 = QVBoxLayout()
 
         self.orginal_text = QTextEdit()
+        self.orginal_text.setStyleSheet("font-size: 18px;")
+
         self.orginal_box = QComboBox()
+        self.orginal_box.setStyleSheet("font-size: 18px; padding: 5px 20px;")
+
         vertical1.addWidget(self.orginal_text)
         vertical1.addWidget(self.orginal_box)
         main_layout.addLayout(vertical1)
 
         self.btn_translate = QPushButton("Translate")
+        self.btn_translate.setStyleSheet(styles.QPushButton_styles)
+
         self.btn_clear = QPushButton("Clear")
+        self.btn_clear.setStyleSheet(styles.QPushButton_styles)
         vertical2.addWidget(self.btn_translate)
+
         vertical2.addWidget(self.btn_clear)
         main_layout.addLayout(vertical2)
 
         self.new_text = QTextEdit()
+        self.new_text.setStyleSheet("font-size: 18px;")
+
         self.new_box = QComboBox()
+        self.new_box.setStyleSheet("font-size: 18px; padding: 5px 20px;")
         vertical3.addWidget(self.new_text)
         vertical3.addWidget(self.new_box)
         main_layout.addLayout(vertical3)
